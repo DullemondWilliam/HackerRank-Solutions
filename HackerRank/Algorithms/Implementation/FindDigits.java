@@ -9,12 +9,13 @@ public class FindDigits {
 		int testCases = in.nextInt();
 		
 		for(;testCases > 0; testCases--){
-			int number = in.nextInt();
-			String num = Integer.toString(number);
-			int count  = 0;
-			for(int j=0; j<num.length(); j++){
-				int a =Integer.parseInt(num.charAt(j)+"");
-				if(a != 0 && number % a == 0){
+			int lower = in.nextInt();
+			int upper = in.nextInt();
+			int count = 0;
+			
+			int i = (int) Math.sqrt(lower);
+			for(; i <= Math.sqrt(upper); i++){
+				if(Math.pow(i,2) >= lower && Math.pow(i, 2) <= upper){
 					count++;
 				}
 			}
